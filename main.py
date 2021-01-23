@@ -25,7 +25,6 @@ def search_character(csv_file_name, search_word):
 
         # 「検索ワード欄」に入力されたキャラクターがCSVファイルに存在しない場合
         else:
-            print(search_word)
             with open('member.csv', 'a') as add_to_csv:
                 writer = csv.DictWriter(add_to_csv, fieldnames=['NAME'])
                 writer.writerow({'NAME': search_word})
