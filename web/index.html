@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <title>Eel Examples</title>
+        <script type="text/javascript" src="eel.js"></script>
+        <script type="text/javascript">
+            async function searchBtnClick() {
+                let inputted_csv_file_name = document.getElementById("csv_file_name").value;
+                let inputted_search_word = document.getElementById("search_word").value;
+                let character_name = await eel.search_character(inputted_csv_file_name, inputted_search_word)();
+                document.querySelector('#result_display_area').insertAdjacentHTML('beforeend', character_name)
+            }
+        </script>
+    </head>
+    <body>
+        <form action="#" id="form-character"  onsubmit="return false;">
+            <label for="csv_file_name">CSVファイル名</label><br>
+            <input type="text" id="csv_file_name" name="csv_file_name" value=""><br><br>
+
+            <label for="search_word">検索ワード</label><br>
+            <input type="text" id="search_word" name="search_word"><br><br>
+
+            <button onclick="searchBtnClick()">検索</button> <br><br>
+
+            <label for="result_display_area">検索結果</label><br>
+            <textarea name="" id="result_display_area" cols="40" rows="10"></textarea>
+        </form>
+    </body>
+</html>
