@@ -1,15 +1,7 @@
 import csv
-import eel
 
 
-def main():
-    eel.init("web")
-    eel.start("index.html")
-
-
-@eel.expose
 def search_character(csv_file_name, search_word):
-
     # 入力されたCSVファイル名と存在するCSVファイル名が一致する場合
     if csv_file_name == 'member.csv':
         with open('member.csv', 'r') as rewrite_csv:
@@ -34,7 +26,3 @@ def search_character(csv_file_name, search_word):
     # 入力されたCSVファイル名と存在するCSVファイル名が一致しない場合
     else:
         return "そのCSVファイルはありません。\n別のCSVファイル名を入力してください。"
-
-
-if __name__ == '__main__':
-    main()
